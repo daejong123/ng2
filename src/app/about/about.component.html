@@ -1,0 +1,5 @@
+<div>
+  <h1>about</h1>
+  <button (click)="changeColor()">换皮肤</button>
+  <app-detail [stuList]="stuData" (eventdottie)="receiveDataFromDetail($event)" (eventphone)="receivePhoneFromDetail($event)" #detail1></app-detail>
+</div>

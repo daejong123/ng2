@@ -1,0 +1,18 @@
+<p>
+  login works! {{title}} {{tip}}
+</p>
+<div>
+  <form #formRef="ngForm" (ngSubmit)='toSubmit(formRef.value)'>
+    <input type="text" name='username' [(ngModel)]="username" #usernameRef="ngModel" required minlength="2" placeholder="用户名"/>{{username}} <br>
+    <!--{{usernameRef.errors | json}}-->
+    <!--<span *ngIf="usernameRef.errors?.required">用户名不能为空<br></span>-->
+    <span *ngIf="usernameRef.errors?.minlength">用户名长度不能少于三个<br></span>
+
+    <input type="password" name='password' [(ngModel)]="password" #passwordRef="ngModel" required minlength="6" placeholder="密码"/> {{password}}<br>
+    <!--<span *ngIf="passwordRef.errors?.required">密码不能为空<br></span>-->
+    <span *ngIf="passwordRef.errors?.minlength">密码长度不能少于6个<br></span>
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+    <button (click)='getInputValue(usernameRef.value, passwordRef.value)'>获取</button>
+  </form>
+</div>

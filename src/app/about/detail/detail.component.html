@@ -1,0 +1,12 @@
+<div>
+  <h1>detail</h1>
+  <div *ngFor="let stu of stuList">
+    <div style="background-color: #eee; border: 1px solid #666" #div>
+      学号：<button (click)="tellAboutClickWho(stu.id)">{{stu.id}}</button> <br>
+      姓名：<span>{{stu.name}}</span> <br>
+      手机：<button (click)="tellAboutClickPhone(stu.phoneNumber)">{{stu.phoneNumber}}</button> <br>
+      爱好：<span>{{stu.hobbies.join()}}</span> <br>
+    </div>
+    <br>
+  </div>
+</div>
